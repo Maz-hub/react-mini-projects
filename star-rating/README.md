@@ -1,12 +1,14 @@
-# React + Vite
+## ⭐ Star Rating Component
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple React component that displays a customizable star rating system using react-icons.
 
-Currently, two official plugins are available:
+-   You can change the number of stars (numOfStars) via props.
+-   Stars highlight on hover and stay selected when clicked.
+-   Hovering and clicking update internal state (hover and rating).
+-   Styling is controlled with CSS classes for active/inactive colors.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Hooks used:**
+`useState` – to track the selected rating and hovered star.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+**Why I built it:**
+To practice working with `useState`, event handlers, props, and conditional rendering in React — and to get familiar with using icon libraries like `react-icons`.
