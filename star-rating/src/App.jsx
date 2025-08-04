@@ -1,11 +1,11 @@
-import StarRating from "./index.jsx";
+import Rating from "./components/Rating";
 
 function App() {
-    return (
-        <>
-            <StarRating numOfStars={5} />
-        </>
-    );
+  return (
+    <>
+      <Rating />
+    </>
+  );
 }
 
 export default App;
