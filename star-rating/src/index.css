@@ -24,11 +24,11 @@ body {
 
 }
 
-.starts {
+.stars {
     display: flex;
     justify-content: center;
     gap: 0.625rem;
-    font-size: 2rem;
+    font-size: 3rem;
     cursor: pointer;
     margin: 1rem;
 
