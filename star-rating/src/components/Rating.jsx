@@ -17,7 +17,7 @@ const Rating = () => {
               onMouseEnter={() => setHover(star)}
               onMouseLeave={() => setHover(0)}
               key={star}
-              className="star"
+              className={`star ${star <= (hover || rating) ? "active" : ""}`}
             >
               {"\u2605"}
             </span>
