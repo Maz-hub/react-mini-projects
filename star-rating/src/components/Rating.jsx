@@ -1,17 +1,20 @@
 import { useState } from "react";
 
-const Rating = () => {
+const Rating = ({
+  heading = "Rate Your Experience",
+  feedbackMessages = ["Terrible", "Poor", "Fair", "Good", "Excellent"],
+}) => {
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(0);
 
   const stars = Array.from({ length: 5 }, (_, i) => i + 1);
   // feedback
-  const feedbackMessages = ["Terrible", "Poor", "Fair", "Good", "Excellent"];
+  // const feedbackMessages = ["Terrible", "Poor", "Fair", "Good", "Excellent"];
 
   return (
     <>
       <div className="rating-container">
-        <h2>Rate your experience</h2>
+        <h2>{heading}</h2>
         <div className="stars">
           {stars.map((star) => (
             <span
