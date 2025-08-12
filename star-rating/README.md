@@ -4,7 +4,7 @@ An interactive star rating UI built with React, allowing users to rate their exp
 
 ---
 
-## ⚙️ Hooks & Features
+### ⚙️ Hooks & Features
 
 - `useState()` to manage:
   - Selected rating
@@ -20,15 +20,7 @@ An interactive star rating UI built with React, allowing users to rate their exp
 
 ---
 
-## 🧩 Tech Stack
-
-- **React** (functional components)
-- **Hooks**
-- **CSS** for styling and transitions
-
----
-
-## ✅ Key Features
+### ✅ Key Features
 
 - Hover to preview your rating
 - Click to lock in your rating
@@ -37,7 +29,7 @@ An interactive star rating UI built with React, allowing users to rate their exp
 
 ---
 
-## ✅ File Overview
+### 📁 File Overview
 
 /src
 └── Rating.jsx # Star rating component logic
