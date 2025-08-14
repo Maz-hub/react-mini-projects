@@ -14,6 +14,12 @@ const Rating = ({
   // feedback
   // const feedbackMessages = ["Terrible", "Poor", "Fair", "Good", "Excellent"];
 
+  const handleSubmit = () => {
+    if (rating > 0) {
+      setSubmitted(true);
+    }
+  };
+
   return (
     <>
       <div className="rating-container">
@@ -38,7 +44,13 @@ const Rating = ({
         )}
 
         {/* button submit */}
-        <button>Submit</button>
+        <button
+          className="submit-btn"
+          onClick={handleSubmit}
+          disabled={rating === 0}
+        >
+          Submit
+        </button>
       </div>
     </>
   );
