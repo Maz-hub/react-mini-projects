@@ -1,37 +1,53 @@
 # ⭐ React Star Rating Component
 
-An interactive star rating UI built with React, allowing users to rate their experience from 1 to 5 stars. Stars highlight on hover and lock in place when selected, with dynamic feedback messages based on the rating.
+An interactive and reusable star rating UI built with React. Users can rate their experience from 1 to 5 stars. The component is fully customizable via props and built using component composition for flexibility and reusability.
 
 ---
 
-### ⚙️ Hooks & Features
+## ⚙️ Features
+
+- Hover to preview the rating
+- Click to lock in your selection
+- Custom feedback messages based on the rating
+- Dynamic star coloring via props
+- Clean component structure using composition
+
+---
+
+## 🧩 Components
+
+### `Rating.jsx`
+
+- Handles the main rating logic and state (`rating`, `hover`)
+- Maps over an array of 5 numbers to render individual `<Star />` components
+- Displays a heading and a feedback message after selection
+- Accepts the following props:
+  - `heading` _(string)_ – custom heading text
+  - `feedbackMessages` _(array)_ – optional custom feedback
+  - `color` _(string)_ – star color
+
+### `Star.jsx`
+
+- Stateless, reusable component that:
+  - Receives color, star number, rating, hover, and event functions via props
+  - Handles individual star rendering with dynamic color
+  - Responds to click and hover events
+
+---
+
+## 🧠 Hooks & Logic
 
 - `useState()` to manage:
-  - Selected rating
-  - Star hover state
-- `Array.from()` to dynamically generate stars
-- `.map()` to render interactive elements in JSX
-- Conditional rendering and class styling
-- Event handlers:
-  - `onClick` to select a rating
-  - `onMouseEnter` / `onMouseLeave` for preview effect
-- Feedback messages linked to each rating (e.g. “Fair”, “Excellent”)
-- Unicode stars (`★`) with custom styling (no icon library)
+  - `rating`: saved rating after user click
+  - `hover`: temporary preview value while hovering
+- `Array.from()` to generate 5-star array
+- `.map()` to render stars dynamically
+- Conditional styling and event handlers to update state
 
 ---
 
-### ✅ Key Features
+## 🛠️ Tech Stack
 
-- Hover to preview your rating
-- Click to lock in your rating
-- Feedback text updates based on selected value
-- Fully responsive, lightweight, and easy to reuse
-
----
-
-### 📁 File Overview
-
-/src
-└── Rating.jsx # Star rating component logic
-└── App.jsx # Main app entry
-└── styles.css # Component styling
+- React (functional components + hooks)
+- Plain CSS for styling
+- No external libraries — stars rendered via Unicode (`★`)
