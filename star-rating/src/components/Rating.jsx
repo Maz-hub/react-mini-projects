@@ -3,10 +3,12 @@ import Star from "./Star.jsx";
 
 const Rating = ({
   heading = "Rate Your Experience",
+  color = "gold",
   feedbackMessages = ["Terrible", "Poor", "Fair", "Good", "Excellent"],
 }) => {
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(0);
+  const [submitted, setSubmitted] = useState(false);
 
   const stars = Array.from({ length: 5 }, (_, i) => i + 1);
   // feedback
@@ -23,28 +25,20 @@ const Rating = ({
               star={star}
               rating={rating}
               hover={hover}
-              color="gold"
+              color={color}
               ratingClick={setRating}
               hoverEnter={setHover}
               hoverLeave={() => setHover(null)}
             />
-            /* 
-            <span
-              onClick={() => setRating(star)}
-              onMouseEnter={() => setHover(star)}
-              onMouseLeave={() => setHover(0)}
-              key={star}
-              className={`star ${star <= (hover || rating) ? "active" : ""}`}
-            >
-              {"\u2605"}
-            </span>
-            */
           ))}
         </div>
         {/* feedback messages */}
         {rating > 0 && (
           <p className="feedback">{feedbackMessages[rating - 1]}</p>
         )}
+
+        {/* button submit */}
+        <button>Submit</button>
       </div>
     </>
   );
