@@ -20,6 +20,12 @@ const Rating = ({
     }
   };
 
+  const closeModal = () => {
+    setSubmitted(false);
+    setRating(0);
+    setHover(0);
+  };
+
   return (
     <>
       <div className="rating-container">
@@ -51,6 +57,21 @@ const Rating = ({
         >
           Submit
         </button>
+
+        {/* modal */}
+        {submitted && (
+          <div className="modal-overlay">
+            <div className="modal">
+              <h2>Thank You</h2>
+              <p>
+                You rated us {rating} star{rating > 1 ? "s" : ""}
+              </p>
+              <button className="close-btn" onClick={closeModal}>
+                Close
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </>
   );
