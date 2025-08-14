@@ -5,7 +5,6 @@ function App() {
     <>
       <Rating
         heading="How do you feel about React?"
-        color="red"
         feedbackMessages={[
           "Hate it",
           "Dislike it",
