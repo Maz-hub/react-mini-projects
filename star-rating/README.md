@@ -11,6 +11,8 @@ An interactive and reusable star rating UI built with React. Users can rate thei
 - Custom feedback messages based on the rating
 - Dynamic star coloring via props
 - Clean component structure using composition
+- Submit button and thank-you modal
+- Reusable `Button` component using `children` prop
 
 ---
 
@@ -18,36 +20,47 @@ An interactive and reusable star rating UI built with React. Users can rate thei
 
 ### `Rating.jsx`
 
-- Handles the main rating logic and state (`rating`, `hover`)
-- Maps over an array of 5 numbers to render individual `<Star />` components
-- Displays a heading and a feedback message after selection
-- Accepts the following props:
-  - `heading` _(string)_ – custom heading text
-  - `feedbackMessages` _(array)_ – optional custom feedback
-  - `color` _(string)_ – star color
+- Main component that handles all app logic and state
+- Tracks:
+  - `rating`: selected value
+  - `hover`: current hovered star
+  - `submitted`: whether rating is submitted
+- Renders all stars and buttons using child components
+- Accepts props:
+  - `heading` _(string)_ – optional custom heading
+  - `feedbackMessages` _(array)_ – optional array of feedback texts
+  - `color` _(string)_ – customizable star color
 
 ### `Star.jsx`
 
-- Stateless, reusable component that:
-  - Receives color, star number, rating, hover, and event functions via props
-  - Handles individual star rendering with dynamic color
-  - Responds to click and hover events
+- Stateless and reusable star unit
+- Receives props for its number, current `rating`, `hover`, and color
+- Uses `onClick`, `onMouseEnter`, and `onMouseLeave` for interaction
+- Applies dynamic color based on hover or rating
+
+### `Modal.jsx`
+
+- Reusable modal component shown after submitting rating
+- Displays a thank-you message and selected rating
+- Includes a close button that resets the state
+
+### `Button.jsx`
+
+- Simple, reusable button component
+- Accepts:
+  - `className`, `disabled`, `onClick`
+  - `children` (React keyword) to render dynamic button content
+- Used for both submit and close buttons
 
 ---
 
 ## 🧠 Hooks & Logic
 
-- `useState()` to manage:
-  - `rating`: saved rating after user click
-  - `hover`: temporary preview value while hovering
-- `Array.from()` to generate 5-star array
-- `.map()` to render stars dynamically
-- Conditional styling and event handlers to update state
-
----
-
-## 🛠️ Tech Stack
-
-- React (functional components + hooks)
-- Plain CSS for styling
-- No external libraries — stars rendered via Unicode (`★`)
+- `useState()` used for:
+  - `rating`: saved rating
+  - `hover`: star preview
+  - `submitted`: tracks modal state
+- `Array.from()` to generate the list of stars `[1, 2, 3, 4, 5]`
+- `.map()` to render `<Star />` components
+- Conditional rendering for feedback message and modal
+- Props used to pass event functions and dynamic values to child components

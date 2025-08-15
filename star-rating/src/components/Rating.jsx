@@ -13,8 +13,6 @@ const Rating = ({
   const [submitted, setSubmitted] = useState(false);
 
   const stars = Array.from({ length: 5 }, (_, i) => i + 1);
-  // feedback
-  // const feedbackMessages = ["Terrible", "Poor", "Fair", "Good", "Excellent"];
 
   const handleSubmit = () => {
     if (rating > 0) {
@@ -52,15 +50,6 @@ const Rating = ({
           <p className="feedback">{feedbackMessages[rating - 1]}</p>
         )}
 
-        {/* button submit 
-        <button
-          className="submit-btn"
-          onClick={handleSubmit}
-          disabled={rating === 0}
-        >
-          Submit
-        </button>
-*/}
         <Button
           className="submit-btn"
           onClick={handleSubmit}
