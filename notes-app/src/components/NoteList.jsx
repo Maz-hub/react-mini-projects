@@ -16,9 +16,7 @@ const NoteList = ({ notes }) => {
           <p className="text-sm text-gray-600">
             <strong>Priority:</strong> {note.priority}
           </p>
-          <p className="mt-2">
-            {note.description}
-          </p>
+          <p className="mt-2">{note.description}</p>
         </div>
       ))}
     </div>
