@@ -17,6 +17,8 @@ function App() {
         setTime((prevTime) => prevTime + 1);
       }, 1000);
     }
+
+    setIsRunning(!isRunning);
   };
 
   return (
