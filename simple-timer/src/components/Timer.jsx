@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import TimerDisplay from "./TimerDisplay.jsx";
 
 function Timer() {
   const timerRef = useRef(null);
@@ -31,7 +32,7 @@ function Timer() {
 
   return (
     <div>
-      <h2 className="text-4xl font-semibold mt-4"> Timer: {time}</h2>
+      <TimerDisplay time={time} />
       {/* Start & Pause button */}
       <button
         onClick={toggleTimer}
